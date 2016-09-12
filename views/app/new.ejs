@@ -1,0 +1,36 @@
+<div class="frame-border">
+  <% flash.get('error').forEach(function (message) { %>
+    <div class="alert">
+      <%= message %>
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+  <% }) %>
+  <br>
+  <h3>Create New App</h3>
+  <div class="wrapper">
+    <form method="POST" action="/apps">
+      <div>
+        <label>App Name:</label>
+        <br>
+        <input type="text" name="appName" style="width:33%;padding: 6px 12px; margin: 8px 0;box-sizing: border-box;"></input>
+      </div>
+      <br>
+      <div>
+        <label>App Description:</label>
+        <br>
+        <textarea rows="5" cols="40" name="appDesc" style="padding: 6px 12px; margin: 8px 0;box-sizing: border-box;"></textarea>
+      </div>
+      <br>
+      <div>
+        <label>Redirect Url:</label>
+        <br>
+        <input type="text" name="redirectUrl" style="width:33%;padding: 6px 12px; margin: 8px 0;box-sizing: border-box;"></input>
+      </div>
+      <br>
+      <div class="buttons">
+        <button class="button button-apps">Save</button>
+        <a href="/">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

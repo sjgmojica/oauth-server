@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%- title %></title>
+    <script>
+      // Check if SVG is supported
+      if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1")) {
+        document.documentElement.className += " svg";
+      } else {
+        document.documentElement.className += " no-svg";
+      }
+    </script>
+
+  </head>
+  <body>
+    <%- body %>
+  </body>
+</html>

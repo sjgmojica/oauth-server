@@ -11,7 +11,7 @@ module.exports = function apiSuccess (data, options) {
   var sails = req._sails;
 
   sails.log.silly("res.apiSuccess() ::", data, options);
-console.log("check herere ::", data, options);
+
   res.api(null, data, options);
 
 };

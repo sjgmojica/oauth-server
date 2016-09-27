@@ -21,11 +21,6 @@ module.exports = {
   //   level: "silent"
   // },
 
-  //-- Session
-  session: {
-    adapter: "memory"
-  },
-
   connections: {
     mysql: {
       adapter: "sails-mysql",

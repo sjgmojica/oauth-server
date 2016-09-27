@@ -1,0 +1,25 @@
+<div class="main">
+  <a href="/admin/clients/new" class="button">Create Client</a>
+
+  <% if (clients) { %>
+    <div>
+      <h4>Lists of Clients</h4>
+      <table class="gridtable">
+        <tr>
+          <th> Client Name </th>
+          <th> Secret Id </th>
+          <th> Secret Key </th>
+          <th> Redirect URI </th>
+        </tr>
+        <% for (var i=0; i < clients.length; i++) { %>
+          <tr>
+            <td><%- clients[i].name %></td>
+            <td><%- clients[i].clientId %></td>
+            <td><%- clients[i].clientSecret %></td>
+            <td><%- clients[i].redirectURI %></td>
+          <tr>
+        <% } %>
+      </table>
+    </div>
+  <% } %>
+</div>

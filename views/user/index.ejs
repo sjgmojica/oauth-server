@@ -1,0 +1,23 @@
+<div class="main">
+  <a href="/admin/users/new" class="button">Create User</a>
+
+  <% if (users) { %>
+    <div>
+      <h4>Lists of User</h4>
+      <table class="gridtable">
+        <tr>
+          <th> id </th>
+          <th>  email </th>
+          <th> password </th>
+        </tr>
+        <% for (var i=0; i < users.length; i++) { %>
+          <tr>
+            <td><%- users[i].id %></td>
+            <td><%- users[i].email %></td>
+            <td><%- users[i].hashedPassword %></td>
+          <tr>
+        <% } %>
+      </table>
+    </div>
+  <% } %>
+</div>

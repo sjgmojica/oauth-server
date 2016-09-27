@@ -9,6 +9,8 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.http.html
  */
 var middlewares = require("../api/middlewares");
+var passport = require("passport");
+
 module.exports.http = {
 
   /****************************************************************************
@@ -34,6 +36,9 @@ module.exports.http = {
       'startRequestTimer',
       'cookieParser',
       'session',
+      "passportInit",
+      "passportSession",
+      "oauthServer",
       'myRequestLogger',
       'bodyParser',
       'handleBodyParserError',
@@ -48,8 +53,10 @@ module.exports.http = {
       '500'
     ],
 
-    miscellaneous   : middlewares.miscellaneous(),
-    requestLogger   : middlewares.requestLogger(),
+    passportInit      : passport.initialize(),
+    passportSession   : passport.session(),
+    miscellaneous     : middlewares.miscellaneous(),
+    requestLogger     : middlewares.requestLogger(),
 
   /****************************************************************************
   *                                                                           *

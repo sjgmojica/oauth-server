@@ -1,0 +1,29 @@
+<div class="frame-border">
+  <% flash.get('error').forEach(function (message) { %>
+    <div class="alert">
+      <%= message %>
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+  <% }) %>
+  <br>
+  <h3>Create User</h3>
+  <div class="wrapper">
+    <form method="POST" action="/admin/users/create">
+      <div>
+        <label>Email:</label>
+        <br>
+        <input type="text" name="email" style="width:33%;padding: 6px 12px; margin: 8px 0;box-sizing: border-box;"></input>
+      </div>
+      <div>
+        <label>Password:</label>
+        <br>
+        <input type="text" name="password" style="width:33%;padding: 6px 12px; margin: 8px 0;box-sizing: border-box;"></input>
+      </div>
+      <br>
+      <div class="buttons">
+        <button class="button button-apps">Save</button>
+        <a href="admin/users">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

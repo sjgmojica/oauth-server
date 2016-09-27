@@ -1,3 +1,8 @@
+.main {
+  margin-left: 200px;
+  padding: 50px;
+}
+
 .button {
   background-color: #555555;
   border: none;
@@ -6,7 +11,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 13px;
   margin: 4px 2px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
@@ -28,7 +33,7 @@
 
 table.gridtable {
 	font-family: verdana,arial,sans-serif;
-	font-size:11px;
+	font-size:14px;
 	color:#333333;
 	border-width: 1px;
 	border-color: #666666;

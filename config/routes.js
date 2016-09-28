@@ -20,6 +20,8 @@ module.exports.routes = {
   //------------- AUTH SERVER -----------------//
   // "GET /oauth/authorize" : "Oauth.authorize",
 
+  //------------- INTROSPECT -----------------//
+  "POST /oauth/introspect"       : "Introspect.index",
 
   //------------- LOGIN SERVER -----------------//
   "GET /login"          : "Session.login",

@@ -36,5 +36,8 @@ module.exports.policies = {
     "index": true,
     "create": true,
     "new": true
+  },
+  "Introspect" : {
+    "index": "oauthBearer"
   }
 };

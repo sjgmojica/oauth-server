@@ -25,7 +25,7 @@ module.exports = {
     mysql: {
       adapter: "sails-mysql",
       host: "localhost",
-      user: "",
+      user: "root",
       password: "",
       database: "oauth"
     }

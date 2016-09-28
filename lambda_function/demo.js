@@ -134,7 +134,7 @@ function introspect(access_token, scopes, callback)
 {
   request({
     // The URL of Authlete's introspection API.
-    // url: 'https://api.authlete.com/api/auth/introspection',
+    url: 'https://api.authlete.com/api/auth/introspection',
 
     // HTTP method.
     method: 'POST',
@@ -218,16 +218,53 @@ exports.handler = function(event, context)
 
   // Get the list of required scopes for the combination of the HTTP method
   // and the resource path.
-  var required_scopes = get_required_scopes(http_method, resource_path);
+  // var required_scopes = get_required_scopes(http_method, resource_path);
 
-  async.auto({
-    test: function (next) {
-      next();
+  var scopes = [];
+
+  var requestParams = {
+    url: 'http://54.169.111.239/oauth/introspect',
+    method: 'post',
+    form: {
+      token: access_token,
+      scopes: scopes
+    },
+    headers: {
+      "Authorization" : "Bearer " + access_token
     }
-  }, function (err, result) {
-    context.fail("Unauthorized palagi :p");
-    // context.succeed(generate_policy('sarah', 'Allow', event.methodArn))
+  };
+
+  request(requestParams, function (err, response, body) {
+
+    if (err) {
+      context.fail("Unauthorized");
+    } else {
+      console.log(body);
+      var _body = {};
+      try {
+        _body = JSON.parse(body);
+      } catch (e) {
+        console.log(e);
+        _body = body;  
+      }
+
+      if (_body.message) {
+        context.fail("Unauthorized");
+      } else {
+        context.succeed(generate_policy(_body.clientId, 'Allow', event.methodArn));  
+      }
+      
+    }
   });
+
+  // async.auto({
+  //   request: function (next) {
+
+  //   }
+  // }, function (err, result) {
+  //   context.fail("Unauthorized palagi :p");
+  //   // context.succeed(generate_policy('sarah', 'Allow', event.methodArn))
+  // });
 
   // async.waterfall([
   //   function(callback) {

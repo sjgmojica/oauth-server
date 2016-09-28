@@ -1,0 +1,16 @@
+{
+  "name": "demo-lambda-fn",
+  "version": "1.0.0",
+  "description": "Demo Lambda Fb",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^2.0.1",
+    "request": "^2.75.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "makmakulet && sarz",
+  "license": "ISC"
+}
